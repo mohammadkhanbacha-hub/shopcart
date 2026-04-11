@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    image: corthidian/shopcart:latest
+    container_name: shopcart_app
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=shopcart-db.chkekieo6nal.eu-north-1.rds.amazonaws.com
+      - DB_USER=admin
+      - DB_PASSWORD=Admin1234!
+      - DB_NAME=shopdb
+      - SESSION_SECRET=devops2026docker
+    restart: always
+
+volumes:
+  db_data:
